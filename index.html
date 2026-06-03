@@ -1,377 +1,438 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Nacal Electronics | Reliable Tech in Narok</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Geist:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f9f9fe",
+                "inverse-on-surface": "#f0f0f5",
+                "on-primary": "#ffffff",
+                "surface-variant": "#e2e2e7",
+                "tertiary": "#705d00",
+                "outline-variant": "#c2c7d1",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#d9dadf",
+                "secondary": "#b51c00",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "outline": "#727780",
+                "inverse-surface": "#2e3034",
+                "on-background": "#191c1f",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#8e1400",
+                "surface-bright": "#f9f9fe",
+                "on-primary-container": "#8ebdf9",
+                "on-tertiary-fixed-variant": "#544600",
+                "surface": "#f9f9fe",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#e7e8ed",
+                "primary-fixed": "#d2e4ff",
+                "tertiary-fixed-dim": "#e9c400",
+                "secondary-fixed": "#ffdad3",
+                "on-surface-variant": "#42474f",
+                "surface-container-highest": "#e2e2e7",
+                "on-tertiary-container": "#4b3e00",
+                "error": "#ba1a1a",
+                "secondary-fixed-dim": "#ffb4a5",
+                "primary": "#00355f",
+                "tertiary-fixed": "#ffe16d",
+                "on-secondary-container": "#fffbff",
+                "surface-container": "#ededf3",
+                "secondary-container": "#db3416",
+                "tertiary-container": "#c8a900",
+                "inverse-primary": "#a0c9ff",
+                "on-tertiary-fixed": "#221b00",
+                "on-primary-fixed-variant": "#07497d",
+                "primary-container": "#0f4c81",
+                "on-surface": "#191c1f",
+                "surface-container-low": "#f3f3f8",
+                "primary-fixed-dim": "#a0c9ff",
+                "error-container": "#ffdad6",
+                "on-primary-fixed": "#001c37",
+                "surface-tint": "#2d6197",
+                "on-secondary-fixed": "#3e0400",
+                "whatsapp": "#25D366"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "card-padding": "16px",
+                "unit": "4px",
+                "gutter": "16px",
+                "container-margin": "24px",
+                "section-gap": "48px"
+            },
+            "fontFamily": {
+                "label-caps": ["Inter"],
+                "price-lg": ["Hanken Grotesk"],
+                "display-lg": ["Hanken Grotesk"],
+                "title-md": ["Hanken Grotesk"],
+                "headline-lg": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Hanken Grotesk"],
+                "body-lg": ["Inter"],
+                "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "price-lg": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .scanline-overlay {
-            position: relative;
-            overflow: hidden;
+        body { -webkit-tap-highlight-color: transparent; }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
-        .scanline-overlay::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 230, 57, 0.03) 50%);
-            background-size: 100% 4px;
-            pointer-events: none;
-            z-index: 10;
+        .bento-large {
+            grid-column: span 2;
         }
-        .terminal-scroll::-webkit-scrollbar {
-            width: 4px;
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
         }
-        .terminal-scroll::-webkit-scrollbar-thumb {
-            background: #00dbe9;
-            border-radius: 0;
-        }
-        .glow-border {
-            box-shadow: 0 0 10px rgba(0, 230, 57, 0.15);
-        }
-        .pulse-red {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px #ffb2b8); }
-            50% { opacity: 0.4; filter: drop-shadow(0 0 1px #ffb2b8); }
-        }
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary-fixed-dim": "#ffb2b8",
-                        "surface-container-lowest": "#0e0e0f",
-                        "secondary-fixed": "#7df4ff",
-                        "surface-container": "#201f20",
-                        "on-primary": "#003907",
-                        "primary-fixed-dim": "#00e639",
-                        "surface-container-low": "#1c1b1c",
-                        "secondary": "#d3fbff",
-                        "inverse-primary": "#006e16",
-                        "on-primary-container": "#007117",
-                        "tertiary": "#fff8f7",
-                        "on-secondary": "#00363a",
-                        "surface-bright": "#3a393a",
-                        "on-tertiary-fixed": "#40000f",
-                        "surface-dim": "#131314",
-                        "on-secondary-fixed": "#002022",
-                        "on-secondary-container": "#00686f",
-                        "on-primary-fixed": "#002203",
-                        "primary-fixed": "#72ff70",
-                        "inverse-on-surface": "#313031",
-                        "error": "#ffb4ab",
-                        "outline-variant": "#3b4b37",
-                        "on-surface-variant": "#b9ccb2",
-                        "on-tertiary": "#67001d",
-                        "tertiary-fixed": "#ffdadb",
-                        "background": "#131314",
-                        "surface-variant": "#353436",
-                        "surface-tint": "#00e639",
-                        "secondary-fixed-dim": "#00dbe9",
-                        "primary": "#ebffe2",
-                        "tertiary-container": "#ffd2d4",
-                        "on-secondary-fixed-variant": "#004f54",
-                        "secondary-container": "#00eefc",
-                        "outline": "#84967e",
-                        "on-background": "#e5e2e3",
-                        "primary-container": "#00ff41",
-                        "surface": "#131314",
-                        "inverse-surface": "#e5e2e3",
-                        "on-primary-fixed-variant": "#00530e",
-                        "on-tertiary-fixed-variant": "#91002d",
-                        "surface-container-highest": "#353436",
-                        "on-error-container": "#ffdad6",
-                        "on-surface": "#e5e2e3",
-                        "on-tertiary-container": "#c2003f",
-                        "error-container": "#93000a",
-                        "on-error": "#690005",
-                        "surface-container-high": "#2a2a2b"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "16px",
-                        "margin-mobile": "16px",
-                        "margin-desktop": "32px",
-                        "unit": "4px",
-                        "container-max": "1440px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Geist"],
-                        "body-lg": ["Geist"],
-                        "headline-lg": ["Space Mono"],
-                        "label-md": ["Space Mono"],
-                        "headline-md": ["Space Mono"],
-                        "code-sm": ["Space Mono"]
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-x-hidden">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 border-b border-outline-variant bg-surface-dim bg-opacity-90 backdrop-blur-md shadow-[0_0_15px_rgba(0,230,57,0.1)]">
-<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="flex items-center gap-8">
-<span class="font-headline-md text-headline-md font-bold text-primary-fixed-dim tracking-tighter">BREACH_SHIELD</span>
-<nav class="hidden md:flex gap-6">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-fixed-dim hover:shadow-[0_0_10px_rgba(0,219,233,0.3)] transition-all active:scale-95 duration-150" href="#">Solutions</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-fixed-dim hover:shadow-[0_0_10px_rgba(0,219,233,0.3)] transition-all active:scale-95 duration-150" href="#">Platform</a>
-<a class="font-label-md text-label-md text-primary-fixed-dim border-b border-primary-fixed-dim pb-1 hover:text-secondary-fixed-dim transition-all" href="#">Intelligence</a>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg">
+<!-- TopAppBar Navigation -->
+<header class="flex justify-between items-center px-container-margin py-4 w-full sticky top-0 z-50 bg-primary shadow-md">
+<div class="flex items-center gap-3">
+<button class="text-on-primary p-1 hover:bg-primary-container/20 transition-all active:scale-95" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-primary">Nacal Electronics</h1>
+</div>
+<button class="font-label-caps text-label-caps px-3 py-2 bg-whatsapp rounded-xl text-white shadow-sm flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            Support
+        </button>
+</header>
+<!-- Navigation Drawer (Off-canvas) -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 bg-surface -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl" id="drawer">
+<div class="p-6 border-b border-outline-variant">
+<div class="flex justify-between items-center">
+<span class="font-title-md text-title-md text-primary font-bold">Nacal Categories</span>
+<button class="material-symbols-outlined text-on-surface-variant" onclick="toggleDrawer()">close</button>
+</div>
+</div>
+<nav class="flex-1 py-4 overflow-y-auto">
+<a class="flex items-center px-6 py-3 bg-primary-container text-on-primary-container rounded-full mx-2 font-body-lg" href="#">
+<span class="material-symbols-outlined mr-4">smartphone</span> Phones
+            </a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 font-body-lg" href="#">
+<span class="material-symbols-outlined mr-4">laptop</span> Laptops
+            </a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 font-body-lg" href="#">
+<span class="material-symbols-outlined mr-4">headphones</span> Accessories
+            </a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 font-body-lg" href="#">
+<span class="material-symbols-outlined mr-4">timer</span> Deal of the Day
+            </a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 font-body-lg" href="#">
+<span class="material-symbols-outlined mr-4">location_on</span> Store Location
+            </a>
 </nav>
 </div>
-<div class="flex items-center gap-4">
-<button class="px-4 py-2 border border-primary-fixed-dim font-label-md text-label-md text-primary-fixed-dim hover:bg-primary-fixed-dim hover:text-on-primary transition-all duration-200 uppercase tracking-widest active:scale-95">
-                    Deploy Breach Shield
-                </button>
+<div class="fixed inset-0 bg-black/50 z-[55] hidden transition-opacity" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<main class="pb-24">
+<!-- Search Bar Section -->
+<section class="px-container-margin pt-4 pb-2">
+<div class="relative group">
+<input class="w-full bg-white border border-outline-variant rounded-xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="Search for phones, laptops..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
 </div>
+</section>
+<!-- Hero Banner Section -->
+<section class="px-container-margin py-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-primary-container flex items-center p-6 shadow-md">
+<div class="z-10 w-2/3">
+<span class="font-label-caps text-label-caps text-on-primary-container bg-surface-container-lowest/20 px-2 py-0.5 rounded mb-2 inline-block uppercase">Official Retailer</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white font-bold leading-tight mb-3">Buy reliable electronics in Narok with fast delivery</h2>
+<button class="bg-white text-primary px-4 py-2 rounded-xl font-label-caps text-label-caps shadow-lg active:scale-95 transition-all">SHOP NOW</button>
 </div>
-</header>
-<main class="pt-24 pb-12 px-margin-desktop max-w-container-max mx-auto">
-<!-- Dashboard Hero -->
-<section class="mb-gutter flex flex-col md:flex-row justify-between items-end gap-4">
-<div>
-<h1 class="font-headline-lg text-headline-lg text-primary-fixed-dim uppercase tracking-tighter">Ops_Intelligence_Center</h1>
-<p class="font-code-sm text-code-sm text-on-surface-variant mt-2 max-w-xl">
-<span class="text-secondary-fixed-dim">&gt;</span> Live telemetry from global nodes. High-fidelity threat visualization and heuristic risk modeling. System status: <span class="text-primary-fixed-dim">OPTIMAL</span>
-</p>
+<img class="absolute right-[-10%] top-1/2 -translate-y-1/2 w-1/2 h-full object-contain opacity-80" data-alt="A professional product shot of high-end consumer electronics including a flagship smartphone and a sleek metallic laptop displayed on a minimalist white background. The lighting is crisp and cool, highlighting the premium glass and metal textures. The composition is modern and balanced, capturing a high-tech corporate aesthetic consistent with a premium retail environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBokrwPZbuh5Vm328RAzll3zeDmaa9QH22qTtpUUUcOge98Ea8eWdh9H8u-rHsD-iPeYQleq_zfXecgAaaKgOMB1ceyMKo_rqNCSQ1OaCNDk_C4SMpmT_wRYM-wC2U8NCgEuydSsr11JFNEkPDSDM-PhzM_B0pd4GsQt9ka5_qfD0p5jWMKCiHOq8c5VJWFsePFcRTsMyFuVSJB1ZBjuvvZjunF-0fb7GwgYj5hcKBrJLQCWt7V3MgeKg3IdSPKiZxEYFk3Ht4UhqU"/>
 </div>
-<div class="flex gap-4">
-<div class="px-3 py-1 border border-outline-variant bg-surface-container-low flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></div>
-<span class="font-code-sm text-code-sm text-on-surface uppercase">Active Session: 04:12:88</span>
+</section>
+<!-- Categories Carousel -->
+<section class="py-6">
+<h3 class="px-container-margin font-title-md text-title-md mb-4 flex justify-between items-center">
+                Categories <span class="font-label-caps text-label-caps text-primary cursor-pointer">VIEW ALL</span>
+</h3>
+<div class="flex overflow-x-auto gap-4 px-container-margin no-scrollbar pb-2">
+<div class="flex-shrink-0 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">smartphone</span>
+</div>
+<span class="font-label-caps text-[10px]">PHONES</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">laptop</span>
+</div>
+<span class="font-label-caps text-[10px]">LAPTOPS</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">watch</span>
+</div>
+<span class="font-label-caps text-[10px]">SMARTWATCH</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">headphones</span>
+</div>
+<span class="font-label-caps text-[10px]">AUDIO</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">power</span>
+</div>
+<span class="font-label-caps text-[10px]">ACCESSORIES</span>
 </div>
 </div>
 </section>
-<!-- Main Dashboard Split Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter h-[calc(100vh-280px)] min-h-[600px]">
-<!-- Left Column: Threat Map -->
-<div class="lg:col-span-8 relative border border-outline-variant bg-surface-container-lowest scanline-overlay group overflow-hidden">
-<div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
-<span class="font-label-md text-label-md bg-surface-dim px-2 py-1 border border-primary-fixed-dim/30 text-primary-fixed-dim">GLOBAL_THREAT_MAP_V4.0</span>
-<div class="flex gap-2">
-<span class="font-code-sm text-code-sm px-2 py-0.5 bg-error-container text-on-error-container">CRITICAL: 14</span>
-<span class="font-code-sm text-code-sm px-2 py-0.5 bg-surface-container text-on-surface-variant">NODES: 1,024</span>
+<!-- Deal of the Day Highlight -->
+<section class="px-container-margin py-4">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden border border-outline-variant relative">
+<div class="bg-secondary text-white px-4 py-2 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">DEAL OF THE DAY</span>
+<div class="flex gap-2 text-[10px] font-bold">
+<span class="bg-black/20 px-1.5 py-0.5 rounded">12h</span>
+<span class="bg-black/20 px-1.5 py-0.5 rounded">45m</span>
 </div>
 </div>
-<!-- Map Canvas Placeholder -->
-<div class="w-full h-full relative bg-[#0a0a0b]">
-<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A highly detailed and sophisticated global map interface in a dark, tech-noir style. The map features deep charcoal continents against an onyx black ocean, illuminated by a intricate web of glowing cyan grid lines. Bright neon red connection lines arch across the globe, pulsating to simulate live data transfers and security breaches. The overall mood is intense, professional, and cinematic, with a subtle digital bloom effect and technical UI elements surrounding the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjcZ7lnjgiA7LVrc7SbUAqmg-2xFFLZimOjpc0do_WQ-HI4q_hBS5zK7_djVtCHw6Zsq6r7EOD2Mg0g1Gbiln_58ONzngzyyjYAOKj5UCp3GNzLU0472_LCWka4ZXbRjjEMsobl81TB1AvYuERMdx5I3tfbWboLPNBpMM8oTpKTWxnkRyiHDg1gZ5tqjket5E__8ISzRWaN4gZyDjppJi7NtssdeG_aVY4ND1u-0FyWcHDgDWsGcOrc0vATLd-DAguU_cT3WMudvc"/>
-<!-- Decorative HUD Overlays -->
-<div class="absolute inset-0 pointer-events-none border-[20px] border-surface-dim/20"></div>
-<!-- Pulsing Points -->
-<div class="absolute top-[40%] left-[25%] w-3 h-3 bg-tertiary-fixed-dim rounded-full pulse-red"></div>
-<div class="absolute top-[60%] left-[70%] w-3 h-3 bg-tertiary-fixed-dim rounded-full pulse-red"></div>
-<div class="absolute top-[30%] left-[55%] w-3 h-3 bg-tertiary-fixed-dim rounded-full pulse-red"></div>
-<!-- Vector Lines Simulation -->
-<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-50" viewbox="0 0 1000 500">
-<path class="animate-pulse" d="M250,200 Q500,100 700,300" fill="transparent" stroke="#ffb2b8" stroke-width="1"></path>
-<path class="animate-pulse" d="M550,150 Q700,50 800,200" fill="transparent" stroke="#ffb2b8" stroke-width="1" style="animation-delay: 1s;"></path>
-</svg>
+<div class="p-4 flex gap-4">
+<div class="w-1/3 aspect-square bg-surface-container-low rounded-lg p-2">
+<img class="w-full h-full object-contain" data-alt="A clean, isolated product photo of a sleek premium smartphone in a vibrant color, positioned diagonally to show off its slim profile and camera modules. The lighting is studio-quality with soft highlights and deep shadows, emphasizing the reflective glass surfaces. Set against a neutral gray background that makes the product pop in a modern tech-retail style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjlYXCHJz7-B5w9BsqbeLlupNDRdhIjAkE7UIPCTzzxMnShoOW6PfgGVxTmsGIacyTX1n4geiD8H6sg3--Kn_VA7XozpJMYmYm8SPox8HTiwUe5TpOqUlHFDlnBNpHP-ke2G6FEPOxncpI7pOTRiIsfGXf5UNXYBv9lYPzEVwIbl3zNBICIkKe4zDgGtsx_0PgQ3BEXaQO5fu6wlqsfOypCo1LJOam-hgyiT_7ipj76vqEpS6HFVTkgCmdyrd9QdTu_WcGBEeWOY"/>
 </div>
-<div class="absolute bottom-4 left-4 z-20 flex gap-4 font-code-sm text-code-sm text-on-surface-variant bg-surface-dim/80 backdrop-blur px-4 py-2 border border-outline-variant">
-<span class="text-primary-fixed-dim">LON: 51.5074° N</span>
-<span>LAT: 0.1278° W</span>
-<span class="opacity-50">|</span>
-<span class="text-secondary-fixed-dim">SIGNAL_STRENGTH: 98%</span>
-</div>
-</div>
-<!-- Right Column: Terminal and Gauges -->
-<div class="lg:col-span-4 flex flex-col gap-gutter">
-<!-- Risk Level Dial -->
-<div class="border border-outline-variant bg-surface-container-low p-gutter flex flex-col items-center justify-center relative overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-fixed-dim via-tertiary-fixed-dim to-error"></div>
-<span class="self-start font-label-md text-label-md text-on-surface-variant mb-4 uppercase">Risk_Heuristics</span>
-<div class="relative w-48 h-48 flex items-center justify-center">
-<!-- Progress Ring -->
-<svg class="w-full h-full -rotate-90">
-<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="8"></circle>
-<circle class="text-tertiary-fixed-dim" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="150" stroke-width="8"></circle>
-</svg>
-<div class="absolute flex flex-col items-center">
-<span class="font-headline-lg text-headline-lg text-tertiary-fixed-dim leading-none">72</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant uppercase">ELEVATED</span>
-</div>
-</div>
-<div class="w-full grid grid-cols-2 gap-2 mt-4">
-<div class="p-2 border border-outline-variant bg-surface-dim">
-<span class="block font-code-sm text-code-sm text-on-surface-variant text-[10px]">THREAT_VEC</span>
-<span class="font-code-sm text-code-sm text-primary-fixed-dim">DDoS_SYNC</span>
-</div>
-<div class="p-2 border border-outline-variant bg-surface-dim">
-<span class="block font-code-sm text-code-sm text-on-surface-variant text-[10px]">CONFIDENCE</span>
-<span class="font-code-sm text-code-sm text-secondary-fixed-dim">94.2%</span>
+<div class="w-2/3">
+<h4 class="font-title-md text-title-md line-clamp-1">iPhone 15 Pro Max 256GB</h4>
+<p class="text-secondary font-price-lg text-price-lg mt-1">KSh 185,000</p>
+<p class="text-outline text-sm line-through">KSh 195,000</p>
+<button class="mt-3 w-full bg-whatsapp text-white font-label-caps text-label-caps py-3 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform whatsapp-pulse">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            ORDER ON WHATSAPP
+                        </button>
 </div>
 </div>
 </div>
-<!-- Security Events Terminal -->
-<div class="flex-grow border border-outline-variant bg-surface-container-lowest flex flex-col overflow-hidden">
-<div class="flex items-center justify-between px-4 py-2 border-b border-outline-variant bg-surface-container-low">
-<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Security_Logs</span>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-outline"></div>
-<div class="w-2 h-2 rounded-full bg-outline"></div>
+</section>
+<!-- Featured Products Grid -->
+<section class="px-container-margin py-6">
+<h3 class="font-title-md text-title-md mb-6">Featured Products</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product 1 -->
+<div class="bg-white rounded-xl p-3 border border-outline-variant shadow-sm flex flex-col group">
+<div class="relative aspect-square mb-3 bg-surface-container-lowest rounded-lg p-4 overflow-hidden">
+<span class="absolute top-2 left-2 bg-primary text-white font-label-caps text-[10px] px-2 py-0.5 rounded">NEW</span>
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" data-alt="High-quality over-ear wireless headphones in a matte black finish. The image is captured from a three-quarter angle to showcase the ear cup texture and adjustable headband. The lighting is professional, using side-lighting to define the curves and edges of the product. The overall style is clean, corporate, and minimalist, emphasizing high-fidelity audio gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRkPtrwND1zLEUk0mnbx4wJxqC1cZMaVfEdT9jaovllfJWnHE007cI3JcdwnGIPfRdKkeGXTLwm9S4iqmw1PDscakVA3vkTwxaPzp85tqEFdm7C8CeeDk0up7bSnU_j9rHbGajVhXLbqyXlEm5s6Vk_M6rKq4FoucwCdeO4n1r2mzSeUXD6TTd1XGngh6UZbpVwEb8xNRkBWOakI4GRgIywzds0xBKeb1bRio-y5CkOWzrMCFcpVF9L1qlFJF4jYqS_XHNcmC1xD0"/>
+</div>
+<h5 class="font-body-sm text-body-sm text-on-surface-variant font-bold mb-1">Sony WH-1000XM5</h5>
+<p class="text-secondary font-price-lg text-price-lg mb-3">KSh 42,000</p>
+<button class="mt-auto w-full border-2 border-whatsapp text-whatsapp font-label-caps text-[10px] py-2 rounded-lg flex items-center justify-center gap-1 active:bg-whatsapp active:text-white transition-all">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        WHATSAPP
+                    </button>
+</div>
+<!-- Product 2 -->
+<div class="bg-white rounded-xl p-3 border border-outline-variant shadow-sm flex flex-col group">
+<div class="relative aspect-square mb-3 bg-surface-container-lowest rounded-lg p-4 overflow-hidden">
+<span class="absolute top-2 left-2 bg-secondary text-white font-label-caps text-[10px] px-2 py-0.5 rounded">SALE</span>
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" data-alt="A modern slim laptop with a silver aluminum finish shown partially open to reveal a vibrant display. The photography style focuses on sleekness and portability, using shallow depth of field to keep the product sharp against a blurred modern office background. High contrast and bright lighting evoke a feeling of professional productivity and tech efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM3aM1HA8rXkYsFWGcoE2jKkCqILKsatCO70As77sS8zt4pn0WoRjf6eT07xHEiCAWTRT6m0XqCMfdjVVJySXFT7anNa7hr6F7OAV42EaaN11GRORGHYMvHZhX4mfCzfeUUdoa7Fd-bIeu4ieO_a7dNr5ONjG5NbOx5f2S9Xas-Zd4e3IaFZwILB9o0VDYdGQqKwQwR_4DtNvs6x5u2G17Vgcyh9GMvXg2F47LSv4zFmxS7MYmq4xElDSvacztcqoPA03RceLtLyw"/>
+</div>
+<h5 class="font-body-sm text-body-sm text-on-surface-variant font-bold mb-1">MacBook Air M2</h5>
+<p class="text-secondary font-price-lg text-price-lg mb-3">KSh 145,000</p>
+<button class="mt-auto w-full border-2 border-whatsapp text-whatsapp font-label-caps text-[10px] py-2 rounded-lg flex items-center justify-center gap-1 active:bg-whatsapp active:text-white transition-all">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        WHATSAPP
+                    </button>
+</div>
+<!-- Product 3 -->
+<div class="bg-white rounded-xl p-3 border border-outline-variant shadow-sm flex flex-col group">
+<div class="relative aspect-square mb-3 bg-surface-container-lowest rounded-lg p-4 overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" data-alt="A latest-generation flagship Android smartphone with an expansive infinity screen, showing vibrant app icons on the display. The phone is held in a way that highlights its ergonomics and thin bezels. The lighting is crisp, studio-style, emphasizing the metallic frame and the camera array's premium lens coating. Corporate high-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnIoWHeWZ7F19Vo4rAfhE-dKhXvksILzgxpWZCRljTDCb-PuyY6zd3vNQI6BIlkkGJkllWYNsu_SX0CUWlLbx42X98-0kTEedaVjWBvuMa-EpkcBocspn4H15HXmURshPyge47MoUzWaLbs2N0kRC-UoMh3fUf0EBmGK4j72SxYiavsYygnEjvD7OUF-CySGad0LoLkvO4TF4nrsSO9Y9LraOe2bdusMPV4z9BPf0Qa1jv3FcZTyDntdFPwVhl7CRCgf_-ikiJYy8"/>
+</div>
+<h5 class="font-body-sm text-body-sm text-on-surface-variant font-bold mb-1">Samsung Galaxy S24 Ultra</h5>
+<p class="text-secondary font-price-lg text-price-lg mb-3">KSh 168,000</p>
+<button class="mt-auto w-full border-2 border-whatsapp text-whatsapp font-label-caps text-[10px] py-2 rounded-lg flex items-center justify-center gap-1 active:bg-whatsapp active:text-white transition-all">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        WHATSAPP
+                    </button>
+</div>
+<!-- Product 4 -->
+<div class="bg-white rounded-xl p-3 border border-outline-variant shadow-sm flex flex-col group">
+<div class="relative aspect-square mb-3 bg-surface-container-lowest rounded-lg p-4 overflow-hidden">
+<span class="absolute top-2 left-2 bg-tertiary text-white font-label-caps text-[10px] px-2 py-0.5 rounded">OFFER</span>
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" data-alt="A sleek tablet with a high-resolution display and a stylus pen resting next to it. The image emphasizes the thinness of the device and the precision of the stylus. Lighting is bright and neutral, creating a clean light-mode environment. Perfect for digital artists and professionals. The style is modern, professional, and tech-forward." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7alkmI0xSNTJsAsICZYjIr4ZGMAE31JfVzcu5q0qNUUT4a1cpk8LiCcDxgFWFATPqbv9_MEEND2wgSFvdoZqpwPcUQbOFNRCKuwl5FcRgoszMcXU5y5ax82vvHqf1dogT9OQiSzq0aUvNUAIr0VXitXzaKCaooZWdHzpgzWbhVIjfWNtO8uLaFLPf61aTMgb2BuaTeq2MjMLxoC3F1u1bP9mEVMtHoDlO--x3TlmR7LNEMkaOa5xE4xu1eSRnUN69Tjj7-gtMMmg"/>
+</div>
+<h5 class="font-body-sm text-body-sm text-on-surface-variant font-bold mb-1">iPad Air 5th Gen</h5>
+<p class="text-secondary font-price-lg text-price-lg mb-3">KSh 95,000</p>
+<button class="mt-auto w-full border-2 border-whatsapp text-whatsapp font-label-caps text-[10px] py-2 rounded-lg flex items-center justify-center gap-1 active:bg-whatsapp active:text-white transition-all">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        WHATSAPP
+                    </button>
 </div>
 </div>
-<div class="terminal-scroll flex-grow p-4 overflow-y-auto font-code-sm text-code-sm space-y-2 leading-relaxed">
-<div class="text-on-surface-variant"><span class="text-primary-fixed-dim">[14:22:01]</span> INITIALIZING_HANDSHAKE: NODE_ALPHA_7</div>
-<div class="text-on-surface-variant"><span class="text-primary-fixed-dim">[14:22:04]</span> ENCRYPTING_TUNNEL: AES-256-GCM</div>
-<div class="text-tertiary-fixed-dim"><span class="text-primary-fixed-dim">[14:22:15]</span> WARNING: UNKNOWN_IP_ATTEMPT @ 192.168.1.45</div>
-<div class="text-on-surface-variant"><span class="text-primary-fixed-dim">[14:22:16]</span> SCRUBBING_PACKET_HEADERS...</div>
-<div class="text-primary-fixed-dim"><span class="text-primary-fixed-dim">[14:22:18]</span> THREAT_NEUTRALIZED: DROP_SIGNAL_EXECUTED</div>
-<div class="text-on-surface-variant"><span class="text-primary-fixed-dim">[14:23:40]</span> ANALYZING_TRAFFIC_PATTERNS_OSI_L7</div>
-<div class="text-secondary-fixed-dim"><span class="text-primary-fixed-dim">[14:23:45]</span> HEURISTIC_MATCH: BOTNET_SIGNATURE_99</div>
-<div class="text-on-surface-variant"><span class="text-primary-fixed-dim">[14:24:01]</span> <span class="cursor-blink">_</span></div>
+</section>
+<!-- Shipping Info Section -->
+<section class="px-container-margin py-8 bg-surface-container-low border-y border-outline-variant">
+<div class="flex flex-col gap-6">
+<div class="flex gap-4 items-start">
+<div class="bg-primary-container p-3 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined">local_shipping</span>
 </div>
-<div class="p-4 border-t border-outline-variant bg-surface-container-low">
-<div class="flex items-center gap-2">
-<span class="text-primary-fixed-dim font-bold">&gt;</span>
-<input class="bg-transparent border-none focus:ring-0 text-code-sm font-code-sm text-primary-fixed-dim w-full placeholder:text-on-surface-variant/30" placeholder="EXECUTE_COMMAND..." type="text"/>
+<div>
+<h4 class="font-title-md text-title-md">Same Day Delivery</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Get your tech delivered within hours anywhere in Narok Town.</p>
 </div>
 </div>
+<div class="flex gap-4 items-start">
+<div class="bg-primary-container p-3 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md">1-2 Days Countrywide</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Reliable shipping to all major towns via G4S and Wells Fargo.</p>
 </div>
 </div>
 </div>
-<!-- Metric Bento Grid (Bottom) -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mt-gutter">
-<div class="p-4 border border-outline-variant bg-surface-container shadow-sm group hover:border-primary-fixed-dim transition-all">
-<span class="font-label-md text-label-md text-on-surface-variant block mb-2">Total_Incursions</span>
-<span class="font-headline-md text-headline-md text-primary-fixed-dim">1,242,901</span>
-<div class="mt-2 h-1 bg-surface-container-highest w-full overflow-hidden">
-<div class="h-full bg-primary-fixed-dim w-3/4"></div>
+</section>
+<!-- Store Location Section -->
+<section class="px-container-margin py-8">
+<h3 class="font-title-md text-title-md mb-4">Find Our Store</h3>
+<div class="rounded-xl overflow-hidden shadow-md border border-outline-variant h-48 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-location="Narok, Kenya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqSOLaQaow3fn8FzRP8K-Q0EXDOZ5G7NFsug0fsskTDUR9Tn0-7cMxz5CScH3FSzOk1HTGAm3KxOcPj7ISqr3d-Tz6fkNyIixHC4FiZ4i4uSMg6cpGuEEymiMERDjWeGZ9u9DtbhGq0YwbZO2X2K40ntlnZ7i3NUif0pkNt1W3etsZbpoOw5-5rErpxf0x9YZ9CycXrOdiQPoFkXQzo_u-SZAO9sLFWehZjRtLR3Wtez1bTm-RdkvzbH8qUjFdSultljsW9m3Zo3Q"/>
+<div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur p-3 rounded-lg border border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary">NAROK TOWN</span>
+<span class="font-body-sm text-[12px] font-bold">Opposite ODM Market</span>
+</div>
+<a class="bg-primary text-white p-2 rounded-lg" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+</a>
 </div>
 </div>
-<div class="p-4 border border-outline-variant bg-surface-container group hover:border-secondary-fixed-dim transition-all">
-<span class="font-label-md text-label-md text-on-surface-variant block mb-2">Network_Load</span>
-<span class="font-headline-md text-headline-md text-secondary-fixed-dim">42.8 Gbps</span>
-<div class="mt-2 h-1 bg-surface-container-highest w-full overflow-hidden">
-<div class="h-full bg-secondary-fixed-dim w-1/2"></div>
+</section>
+<!-- Testimonials -->
+<section class="px-container-margin py-8 overflow-hidden">
+<h3 class="font-title-md text-title-md mb-6">Customer Reviews</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar py-2">
+<div class="min-w-[280px] bg-white p-5 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-1 text-tertiary mb-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-sm italic text-on-surface-variant">"Best electronics shop in Narok. Got my HP laptop delivered to Maasai Mara the next day. Highly professional!"</p>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-bold text-on-primary-container">SK</div>
+<div>
+<p class="font-label-caps text-[11px] font-bold">Samuel K.</p>
+<p class="text-[10px] text-outline">Verified Buyer</p>
 </div>
 </div>
-<div class="p-4 border border-outline-variant bg-surface-container group hover:border-tertiary-fixed-dim transition-all">
-<span class="font-label-md text-label-md text-on-surface-variant block mb-2">Decryption_Rate</span>
-<span class="font-headline-md text-headline-md text-tertiary-fixed-dim">0.003 ms</span>
-<div class="mt-2 h-1 bg-surface-container-highest w-full overflow-hidden">
-<div class="h-full bg-tertiary-fixed-dim w-1/4"></div>
 </div>
 </div>
-<div class="p-4 border border-outline-variant bg-surface-container group hover:border-primary-fixed transition-all">
-<span class="font-label-md text-label-md text-on-surface-variant block mb-2">Shield_Status</span>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="verified_user">verified_user</span>
-<span class="font-headline-md text-headline-md text-on-surface">HARDENED</span>
-</div>
-<div class="mt-2 text-code-sm text-on-primary-fixed-variant uppercase font-bold">Protocol v9.1 Active</div>
-</div>
-</div>
+</section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 border-t border-outline-variant bg-surface-container-lowest dark:bg-surface-container-lowest mt-12">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-<div class="lg:col-span-1">
-<span class="font-headline-md text-headline-md text-primary-fixed-dim block mb-4">BREACH_SHIELD</span>
-<p class="font-code-sm text-code-sm text-on-surface-variant mb-6 uppercase">Automated perimeter defense for the distributed frontier.</p>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-secondary-fixed-dim cursor-pointer hover:text-primary-fixed" data-icon="terminal">terminal</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim cursor-pointer hover:text-primary-fixed" data-icon="hub">hub</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim cursor-pointer hover:text-primary-fixed" data-icon="security">security</span>
+<footer class="w-full px-container-margin py-8 flex flex-col gap-6 bg-inverse-surface text-inverse-on-surface pb-24">
+<div class="flex flex-col gap-4">
+<h2 class="font-title-md text-inverse-on-surface font-bold">Nacal Electronics</h2>
+<p class="font-body-sm text-inverse-on-surface/80">© 2024 Nacal Electronics Narok. Reliable tech, fast delivery. Your number one electronics partner in the South Rift.</p>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary">CONTACT</span>
+<a class="text-body-sm hover:text-primary transition-colors" href="tel:0707455572">0707 455572</a>
+<a class="text-body-sm hover:text-primary transition-colors" href="#">WhatsApp Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary">LINKS</span>
+<a class="text-body-sm hover:text-primary transition-colors" href="#">Shipping Policy</a>
+<a class="text-body-sm hover:text-primary transition-colors" href="#">Narok Store Map</a>
 </div>
 </div>
-<div>
-<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-widest">Resources</h4>
-<ul class="space-y-2">
-<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-fixed transition-colors duration-200 hover:underline decoration-primary-fixed-dim" href="#">Documentation</a></li>
-<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-fixed transition-colors duration-200 hover:underline decoration-primary-fixed-dim" href="#">API</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-widest">Support</h4>
-<ul class="space-y-2">
-<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-fixed transition-colors duration-200 hover:underline decoration-primary-fixed-dim" href="#">Security Disclosures</a></li>
-<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-fixed transition-colors duration-200 hover:underline decoration-primary-fixed-dim" href="#">Status Updates</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-widest">Terminal_Output</h4>
-<div class="bg-surface-container p-3 border border-outline-variant font-code-sm text-code-sm text-on-surface-variant opacity-70">
-                    © 2024 BREACH_SHIELD OPS.<br/>
-                    ALL RIGHTS RESERVED.<br/>
-                    BUILD: STABLE_X64_92
-                </div>
-</div>
+<div class="flex gap-4 pt-4 border-t border-outline/30">
+<span class="material-symbols-outlined text-2xl opacity-60">social_leaderboard</span>
+<span class="material-symbols-outlined text-2xl opacity-60">shopping_basket</span>
+<span class="material-symbols-outlined text-2xl opacity-60">photo_camera</span>
 </div>
 </footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface border-t border-outline-variant pb-safe shadow-lg">
+<a class="flex flex-col items-center justify-center text-secondary font-bold scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-label-caps text-[10px] mt-1">Deals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-caps text-[10px] mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-caps text-[10px] mt-1">Cart</span>
+</a>
+</nav>
 <script>
-        // Simulate terminal log updates
-        const logs = [
-            "DECRYPTING_PACKET_772...",
-            "ROUTING_THROUGH_TOR_EXIT_9",
-            "SCANNING_VULN_DB_UPDATE",
-            "MAPPING_LATENCY_SPIKE_APAC",
-            "SYSTEM_OPTIMIZATION_COMPLETE",
-            "ALERT: BRUTE_FORCE_DETECTED_SYD",
-            "MITIGATING_THREAT_AUTO..."
-        ];
-        const terminal = document.querySelector('.terminal-scroll');
-        
-        setInterval(() => {
-            const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
-            const log = logs[Math.floor(Math.random() * logs.length)];
-            const div = document.createElement('div');
-            div.className = "text-on-surface-variant";
-            div.innerHTML = `<span class="text-primary-fixed-dim">[${time}]</span> ${log}`;
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const isOpen = drawer.classList.contains('translate-x-0');
             
-            // Insert before the blinking cursor
-            const cursorLine = terminal.lastElementChild;
-            terminal.insertBefore(div, cursorLine);
-            
-            // Scroll to bottom
-            terminal.scrollTop = terminal.scrollHeight;
-            
-            // Clean up old logs to keep performance
-            if (terminal.children.length > 25) {
-                terminal.removeChild(terminal.firstElementChild);
+            if (isOpen) {
+                drawer.classList.remove('translate-x-0');
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                drawer.classList.add('translate-x-0');
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             }
-        }, 3000);
-
-        // Interaction for the command input
-        const input = document.querySelector('input');
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && input.value) {
-                const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
-                const div = document.createElement('div');
-                div.className = "text-secondary-fixed-dim font-bold";
-                div.innerHTML = `<span class="text-primary-fixed-dim">[${time}]</span> COMMAND_EXEC: ${input.value.toUpperCase()}`;
-                
-                const cursorLine = terminal.lastElementChild;
-                terminal.insertBefore(div, cursorLine);
-                terminal.scrollTop = terminal.scrollHeight;
-                input.value = '';
-            }
-        });
+        }
     </script>
 </body></html>
